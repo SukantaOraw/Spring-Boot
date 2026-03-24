@@ -15,16 +15,30 @@ public class HelloController {
         // ApllicationContext is an Interface thus cannot be closed
         // ClassPathXmlApplicationContext is a Class
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("SpringPractice.xml");
-        Student student = context.getBean("student", Student.class);
-        student.setName("Sukanta Oraw");
-        student.setMajor("CSE");
+        Student student1 = (Student) context.getBean("student", Student.class);
+        student1.setName("Sukanta Oraw");
+        student1.setMajor("CSE");
 
         
-        String result = student.getName() + " " + student.getMajor();
+        String result1 = student1.getName() + " " + student1.getMajor();
+
+        Student student2 = (Student) context.getBean("student", Student.class);
+        
+        String result2 = student2.getName() + " " + student2.getMajor();
+
 
         context.close();
 
-        return result;  
+        String comp = "false";
+
+        if (student1 == student2) {
+            comp = "true";
+        }
+
+        String mainResult = "Are the two beans Result1 : " + result1 + " and Result2 : " + result2 + " referencing to the same object? " + comp;
+
+
+        return mainResult;  
 
     }
 }
