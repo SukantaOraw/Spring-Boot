@@ -1,11 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:p="http://www.springframework.org/schema/p" xsi:schemaLocation="http://www.springframework.org/schema/beans
-	https://www.springframework.org/schema/beans/spring-beans.xsd">
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="student" class="com.invictus.springpractice.Student" scope="prototype">
-        <property name="name" value="Default name" />
-        <property name="major" value="Default major" />
-    </bean>    
+    <!-- Define the Student bean -->
+    <!-- <bean id="student" class="com.invictus.springpractice.Student"> -->
+        <!-- Inject the Laptop bean into the student's laptop property -->
+        <!-- Using an inner bean to inject Laptop without a 'ref' attribute -->
+        <!-- <property name="laptop"> -->
+            <!-- <bean class="com.invictus.springpractice.Laptop"> -->
+                <!-- <property name="brand" value="Default Laptop Brand from Inner Bean"/> -->
+            <!-- </bean> -->
+        <!-- </property> -->
+    <!-- </bean> -->
+
+    <!-- or -->
+
+    <bean id="student" class="com.invictus.springpractice.Student">
+        <property name="name" value="Default Student Name"/>
+        <property name="major" value="Default Student Major"/>
+        <property name="laptop" ref="laptop"/>
+    </bean>
+
+    <bean id="laptop" class="com.invictus.springpractice.Laptop">
+        <property name="brand" value="Default Laptop Brand"/>
+    </bean>
+
 
 </beans>

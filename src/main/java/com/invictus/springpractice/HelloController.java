@@ -10,19 +10,10 @@ public class HelloController {
 
     @GetMapping("/")
     public String home() {
-
-        // ApplicationContext context = new ClassPathXmlApplicationContext("SpringPractice.xml"); 
-        // ApllicationContext is an Interface thus cannot be closed
-        // ClassPathXmlApplicationContext is a Class
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("SpringPractice.xml");
-        Student student1 = (Student) context.getBean("student", Student.class);
         
         String mainResult = "Check console for results";
 
         return mainResult;
-//          DisspatcherServlet        : Completed initialization in 3 ms
-//          Name setter called
-//          Major setter called
 
     }
 }
