@@ -16,29 +16,13 @@ public class HelloController {
         // ClassPathXmlApplicationContext is a Class
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("SpringPractice.xml");
         Student student1 = (Student) context.getBean("student", Student.class);
-        student1.setName("Sukanta Oraw");
-        student1.setMajor("CSE");
-
         
-        String result1 = student1.getName() + " " + student1.getMajor();
+        String mainResult = "Check console for results";
 
-        Student student2 = (Student) context.getBean("student", Student.class);
-        
-        String result2 = student2.getName() + " " + student2.getMajor();
-
-
-        context.close();
-
-        String comp = "false";
-
-        if (student1 == student2) {
-            comp = "true";
-        }
-
-        String mainResult = "Are the two beans Result1 : " + result1 + " and Result2 : " + result2 + " referencing to the same object? " + comp;
-
-
-        return mainResult;  
+        return mainResult;
+//          DisspatcherServlet        : Completed initialization in 3 ms
+//          Name setter called
+//          Major setter called
 
     }
 }
