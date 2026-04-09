@@ -5,16 +5,16 @@
 
 
     <bean id="student" class="com.invictus.springpractice.Student">
-        <!-- Constructor Injection -> Using Index -->
-        <constructor-arg index='0' value="Alex"/>
-        <constructor-arg index='1' value="MS"/>
+        <!-- Constructor Injection -> Using Types -->
+        <constructor-arg type="java.lang.String" value="Arjun"/>
+        <constructor-arg type="java.lang.String" value="DS"/>
         
-        <constructor-arg index='2' ref="laptop"/>
+        <constructor-arg type="com.invictus.springpractice.Laptop" ref="laptop"/>
     </bean>
 
     <bean id="laptop" class="com.invictus.springpractice.Laptop">
-        <!-- Constructor Injection -> Using Names  -->
-        <constructor-arg index='0' value="Asus"/>        
+        <!-- Constructor Injection -> Using Types  -->
+        <constructor-arg type="java.lang.String" value="Asus"/>        
     </bean>
 
 

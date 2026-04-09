@@ -21,7 +21,7 @@ public class SpringpracticeApplication {
 		context.close();
 
 		// Output: Constructor Injection using name of variable
-		// Laptop object setter called in Student class : Alex MS
+		// Laptop object setter called in Student class : Arjun DS
 		// com.invictus.springpractice.Laptop@7334aada
 
 
