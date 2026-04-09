@@ -4,6 +4,10 @@ public class Laptop {
 
     private String brand;
 
+    Laptop(String brand) {
+        this.brand = brand;
+    }
+
     public String getBrand() {
         System.out.println("Laptop Brand getter called in Laptop class");
         return brand;

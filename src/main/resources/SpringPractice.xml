@@ -3,27 +3,19 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans
                            http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <!-- Define the Student bean -->
-    <!-- <bean id="student" class="com.invictus.springpractice.Student"> -->
-        <!-- Inject the Laptop bean into the student's laptop property -->
-        <!-- Using an inner bean to inject Laptop without a 'ref' attribute -->
-        <!-- <property name="laptop"> -->
-            <!-- <bean class="com.invictus.springpractice.Laptop"> -->
-                <!-- <property name="brand" value="Default Laptop Brand from Inner Bean"/> -->
-            <!-- </bean> -->
-        <!-- </property> -->
-    <!-- </bean> -->
-
-    <!-- or -->
 
     <bean id="student" class="com.invictus.springpractice.Student">
-        <property name="name" value="Default Student Name"/>
-        <property name="major" value="Default Student Major"/>
-        <property name="laptop" ref="laptop"/>
+        <!-- <property name="name" value="Default Student Name"/> -->
+        <!-- Property -> Setter injection -->
+        <constructor-arg name="name" value="Sukanta"/>
+        <constructor-arg name="major" value="CSE"/>
+        <!-- Constructor Injection -> Using Names -->
+        <constructor-arg name="laptop" ref="laptop"/>
     </bean>
 
     <bean id="laptop" class="com.invictus.springpractice.Laptop">
-        <property name="brand" value="Default Laptop Brand"/>
+        <constructor-arg name="brand" value="Asus"/>
+        <!-- Constructor Injection -> Using Names          -->
     </bean>
 
 

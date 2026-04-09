@@ -16,30 +16,14 @@ public class SpringpracticeApplication {
 		// SpringApplication.run(SpringpracticeApplication.class, args);
 
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("SpringPractice.xml");
-		Student student1 = (Student) context.getBean("student", Student.class);
-
-		// Properties are now set on the bean after it's retrieved from the context
-		student1.setName("Sukanta");
-		student1.setMajor("Computer Science");
-		// Access the injected Laptop object and set its brand
-		student1.getLaptop().setBrand("Asus");		
+		Student student1 = (Student) context.getBean("student", Student.class);			
 
 		context.close();
 
-		// Output: using 1st XML -> (using nested beans)
-		// Laptop Brand setter called in Laptop class with value: Default Laptop Brand from Inner Bean
-		// Laptop object setter called in Student class
-		// Name setter called with value: Sukanta
-		// Major setter called with value: Computer Science
-		// Laptop Brand setter called in Laptop class with value: Asus
+		// Output: Constructor Injection using name of variable
+		// Laptop object setter called in Student class : Sukanta CSE
+		// com.invictus.springpractice.Laptop@2eea88a1
 
-		// Output: using 2nd XML -> (using ref)
-		// Laptop Brand setter called in Laptop class with value: Default Laptop Brand
-		// Name setter called with value: Default Student Name
-		// Major setter called with value: Default Student Major
-		// Laptop object setter called in Student class
-		// Name setter called with value: Sukanta
-		// Major setter called with value: Computer Science
-		// Laptop Brand setter called in Laptop class with value: Asus
+
 	}
 }
