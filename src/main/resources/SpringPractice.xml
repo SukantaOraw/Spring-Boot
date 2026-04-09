@@ -5,17 +5,16 @@
 
 
     <bean id="student" class="com.invictus.springpractice.Student">
-        <!-- <property name="name" value="Default Student Name"/> -->
-        <!-- Property -> Setter injection -->
-        <constructor-arg name="name" value="Sukanta"/>
-        <constructor-arg name="major" value="CSE"/>
-        <!-- Constructor Injection -> Using Names -->
-        <constructor-arg name="laptop" ref="laptop"/>
+        <!-- Constructor Injection -> Using Index -->
+        <constructor-arg index='0' value="Alex"/>
+        <constructor-arg index='1' value="MS"/>
+        
+        <constructor-arg index='2' ref="laptop"/>
     </bean>
 
     <bean id="laptop" class="com.invictus.springpractice.Laptop">
-        <constructor-arg name="brand" value="Asus"/>
-        <!-- Constructor Injection -> Using Names          -->
+        <!-- Constructor Injection -> Using Names  -->
+        <constructor-arg index='0' value="Asus"/>        
     </bean>
 
 
