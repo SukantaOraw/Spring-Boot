@@ -1,18 +1,14 @@
 package com.invictus.springpractice;
 
+import java.util.List;
+
 public class Student {
 
-    private String name;
-    private String major;
-    private Laptop laptop; 
+    private List<String> subjects;
 
-    Student(String name, String major, Laptop laptop) {
-        this.name = name;
-        this.major = major;
-        this.laptop = laptop;
-
-        System.out.println(
-                "Laptop object setter called in Student class : " + this.name + " " + this.major + " " + this.laptop + "\n");
-   }
+    public void setSubjects(List<String> subjects) {
+        this.subjects = subjects;
+        System.out.println("setSubjects called in Student class with value: " + this.subjects);
+    }
 
 }

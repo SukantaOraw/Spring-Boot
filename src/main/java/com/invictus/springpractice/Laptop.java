@@ -14,8 +14,8 @@ public class Laptop {
     }
 
     public void setBrand(String brand) {
-        System.out.println("Laptop Brand setter called in Laptop class with value: " + brand );
+        System.out.println("Laptop Brand setter called in Laptop class with value: " + brand);
         this.brand = brand;
     }
-    
+
 }

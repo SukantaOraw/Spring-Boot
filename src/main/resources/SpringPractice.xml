@@ -5,17 +5,16 @@
 
 
     <bean id="student" class="com.invictus.springpractice.Student">
-        <!-- Constructor Injection -> Using Types -->
-        <constructor-arg type="java.lang.String" value="Arjun"/>
-        <constructor-arg type="java.lang.String" value="DS"/>
-        
-        <constructor-arg type="com.invictus.springpractice.Laptop" ref="laptop"/>
-    </bean>
 
-    <bean id="laptop" class="com.invictus.springpractice.Laptop">
-        <!-- Constructor Injection -> Using Types  -->
-        <constructor-arg type="java.lang.String" value="Asus"/>        
-    </bean>
 
+        <!-- Collection Injection -->
+        <property name="subjects">
+            <list>
+                <value>Maths</value>
+                <value>Science</value>
+                <value>English</value>
+            </list>
+        </property>
+    </bean>
 
 </beans>
